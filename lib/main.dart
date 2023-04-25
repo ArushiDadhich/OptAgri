@@ -1,5 +1,7 @@
 import 'package:floating_action_bubble/floating_action_bubble.dart';
 import 'package:flutter/material.dart';
+import 'checkout_arya.dart';
+import 'package:http/http.dart';
 
 void main() {
   runApp(const MyApp());
@@ -60,13 +62,20 @@ class _MyHomePageState extends State<MyHomePage>
         floatingActionButton: FloatingActionBubble(
           items: <Bubble>[
             Bubble(
-              title: "Sechan",
+              title: "Crop Recommendation",
               iconColor: Colors.white,
               bubbleColor: Colors.black,
               icon: Icons.water_drop,
               titleStyle: TextStyle(fontSize: 18, color: Colors.white),
               onPress: () {
-                _animationController!.reverse();
+                Navigator.push(context, 
+                MaterialPageRoute(builder: (BuildContext context)
+                {
+                  return checkoutArya();
+                },
+                ),
+                );
+                //_animationController!.reverse();
               },
             ),
             Bubble(
